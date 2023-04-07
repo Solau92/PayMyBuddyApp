@@ -3,6 +3,9 @@ package com.paymybuddy.app.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.DynamicUpdate;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="user")
 @DynamicUpdate
@@ -26,6 +29,32 @@ public class User {
 
     @Column(name = "acount_balance")
     private double accountBalance;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
+    )
+    @JoinColumn(name = "user_cred_id")
+    List<Transfer> transfers_received = new ArrayList<>();
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
+    )
+    @JoinColumn(name = "user_deb_id")
+    List<Transfer> transfers_done = new ArrayList<>();
+
+    @ManyToMany(
+
+    )
+    @JoinTable(
+            name = "contact",
+            joinColumns = @JoinColumn(name = "user_a_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_b_id")
+    )
+    List<User> contacts = new ArrayList<>();
 
     public Integer getId() {
         return id;

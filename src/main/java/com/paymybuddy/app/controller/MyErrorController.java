@@ -21,24 +21,20 @@ public class MyErrorController implements ErrorController {
             Integer statusCode = Integer.valueOf(status.toString());
 
             if (statusCode == HttpStatus.NOT_FOUND.value()) {
-                // handle HTTP 404 Not Found error
-                errorPage = "error";
+                errorPage = "error404";
 
             } else if (statusCode == HttpStatus.FORBIDDEN.value()) {
-                // handle HTTP 403 Forbidden error
-                errorPage = "error";
+                errorPage = "error403";
 
             } else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-                // handle HTTP 500 Internal Server error
                 errorPage = "error";
 
             }
         }
-
         return errorPage;
     }
 
-    public String getErrorPath() {
-        return "/error";
-    }
+//    public String getErrorPath() {
+//        return "/error";
+//    }
 }

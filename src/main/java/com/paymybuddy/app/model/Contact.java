@@ -1,18 +1,19 @@
 package com.paymybuddy.app.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
-@Table(name="user")
+@Table(name="contact")
+@IdClass(ContactId.class)
 @DynamicUpdate
 public class Contact {
 
+    @Id
     @Column(name="user_a_id", nullable = false)
     private Integer idA;
 
+    @Id
     @Column(name="user_b_id", nullable = false)
     private Integer idB;
 

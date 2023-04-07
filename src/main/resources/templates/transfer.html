@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="styles.css">
+		<link th:href="@{/css/styles.css}" rel="stylesheet" />
+		<title>Transfer</title>
+	</head>
+	
+	<body>
+
+		<nav>
+			<div id="navGauche">
+				<h1>Pay My Buddy</h1>
+			</div>
+			
+			<div id="navDroite">
+					<ul>					
+							<a href="/home">Home</a>
+							<a href="#" class="pageEnCours">Transfer</a>		
+							<a href="/profile">Profile</a>
+							<a href="/contact">Contact</a>
+							<a href="/logoff">Log off</a>
+					</ul>
+						    
+			</div>
+		</nav>
+		
+		<header>
+			<div id="header">
+				<a href="#" class="pageEnCours">Home /</a> Transfer
+			</div>
+			
+		</header>
+		
+		<main>
+			<section id="titre1">	
+				<div>
+					<h2>Send Money</h2>
+				</div>			
+				<div>
+					<a><input class="blueButton" type="button" onclick=window.location.href="/contact" value="Add Connection"></input></a>
+				</div>	
+			</section>
+			
+			<section id="newTransfer">			
+					
+					<div><form>
+						<select> 
+							<option value=""> Select A Connection </option>
+						</select>
+					</form></div>
+					
+					<div><form>
+						<input type="number" min="0" placeholder="0.0€"></input>
+					</form></div>
+					
+					<div><form>
+						<button class="greenButton">Pay</button>
+					</form></div>
+					
+			</section>
+
+			</br>
+			
+			<section id="titre2">
+				<h2>My Transactions</h2>
+			</section>
+			
+			<section id="tableau">
+				<table border ="1">
+					<tr>
+						<td class="tableGreen">Connections</td>
+						<td class="tableGreen">Description</td>
+						<td class="tableGreen">Amount</td>
+					</tr>
+					<tr>
+						<td class="tableGrey">.</td>
+						<td class="tableGrey">.</td>
+						<td class="tableGrey">.</td>
+					</tr>
+					<tr>
+						<td class="tableRegular">.</td>
+						<td class="tableRegular">.</td>
+						<td class="tableRegular">.</td>
+					</tr>
+				</table>
+			</section>
+		</main>
+	</body>
+</html>

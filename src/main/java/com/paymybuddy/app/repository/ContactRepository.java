@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContactRepository extends CrudRepository<Contact, Integer> {
 
-    public void deleteByIdA(Integer id);
+/*    public void deleteByIdA(Integer id);
 
-    public void deleteByIdB(Integer id);
+    public void deleteByIdB(Integer id);*/
 
 }

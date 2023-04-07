@@ -21,12 +21,12 @@ public class ContactService {
         return contactRepository.save(ccontact);
     }
 
-    public void deleteContactByIdA(Integer id) {
+/*    public void deleteContactByIdA(Integer id) {
         contactRepository.deleteByIdA(id);
     }
 
     public void deleteContactByIdB(Integer id) {
         contactRepository.deleteByIdB(id);
-    }
+    }*/
 
 }
